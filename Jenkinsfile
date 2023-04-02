@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Upload War Nexus'){
             steps{
-                nexusPublisher nexusInstanceId: 'Maven_Repository', nexusRepositoryId: 'Maven_Repository', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspaces/Maven_application_upload_on-Nexus/target/**/*.war']], mavenCoordinate: [artifactId: 'maven-web-application', groupId: 'com.mt', packaging: 'war', version: '0.0.1-SNAPSHOT']]]
+                nexusPublisher nexusInstanceId: 'Maven_Repository', nexusRepositoryId: 'Maven_Repository', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/Maven_application_upload_on-Nexus/target/maven-web-application.war']], mavenCoordinate: [artifactId: 'maven-web-application', groupId: 'com.mt', packaging: 'war', version: '0.0.1-SNAPSHOT']]]
             }
         }
         stage('Deploy'){
